@@ -1,0 +1,33 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: 'March 2024 - April 2024',
+        title: 'Front-End Developer Intern',
+        company: 'Involve LLC',
+        description: 'I implemented front-end changes on Laravel projects, collaborated on feature integration, and attended meetings with project managers to discuss requirements.'
+    },
+    {
+        date: 'August 2024',
+        title: 'Google Cybersecurity Certificate',
+        company: 'Coursera',
+        description: 'I have earned the Google Cybersecurity Certificate and have experience with Linux, SQL, SIEM tools, and IDS. I can also identify and mitigate common cybersecurity risks, threats, and vulnerabilities.'
+    },
+    
+    {
+        date: 'August 2020 - May 2024',
+        title: 'BS. Computer Science',
+        company: 'Inter American University of Puerto Rico',
+    },
+]
+---
+<ol class="relative mt-16">
+    {
+      EXPERIENCE.map((experience) => (
+        <li class="">
+            <ExperienceItem {...experience} />
+        </li>
+      ))
+    }
+  </ol>

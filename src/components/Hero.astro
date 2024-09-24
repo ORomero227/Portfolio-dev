@@ -1,0 +1,39 @@
+---
+import Badge from "../components/Badge.astro"
+import LinkedInIcon from './icons/LinkedInIcon.astro';
+import MailIcon from "./icons/MailIcon.astro"
+import SocialPill from "../components/SocialPill.astro"
+import GithubIcon from "./icons/GithubIcon.astro";
+import DownloadIcon from "./icons/DownloadIcon.astro";
+---
+
+<div class="max-w-xl">
+    <div class="mb-4">
+        <Badge>Available to Work</Badge>
+    </div>
+  <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
+    Hi, I'm Oscar Romero
+  </h1>
+  <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 
+            [&>strong]:font-semibold dark:text-gray-300">
+        Software Developer from Puerto Rico, focused on building efficient and functional solutions, always prioritizing user experience and security.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill href="mailto:oromero2812@outlook.com">
+      <MailIcon class="size-4" />
+      Contact Me
+    </SocialPill>
+    <SocialPill href="https://www.linkedin.com/in/oscar-romero-barbosa/">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/ORomero227">
+      <GithubIcon class="size-4" />
+      GitHub
+    </SocialPill>
+    <SocialPill href="/CV-OscarRomero.pdf">
+      <DownloadIcon class="size-4" />
+      Download CV
+    </SocialPill>
+  </nav>
+</div>
