@@ -1,10 +1,10 @@
 ---
-import DatabaseIcon from "./icons/Database.astro"
-import LinkButton from "./LinkButton.astro"
-import GithubIcon from "./icons/GithubIcon.astro"
-import CodeIcon from "./icons/CodeIcon.astro"
-import PythonIcon from "./icons/Python.astro"
-import BoostrapIcon from "./icons/BootstrapIcon.astro"
+import DatabaseIcon from "./icons/Database.astro";
+import LinkButton from "./LinkButton.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
+import CodeIcon from "./icons/CodeIcon.astro";
+import PythonIcon from "./icons/Python.astro";
+import BoostrapIcon from "./icons/BootstrapIcon.astro";
 
 const TAGS = {
   MSSQL: {
@@ -15,24 +15,24 @@ const TAGS = {
   VBA: {
     name: "Visual Basic",
     class: "bg-gradient-to-r from-blue-600 to-purple-800 text-white",
-    icon: CodeIcon
+    icon: CodeIcon,
   },
   ASP: {
     name: "ASP.Net",
     class: "bg-[#7114e7] text-white",
-    icon: CodeIcon
+    icon: CodeIcon,
   },
   Bootstrap: {
     name: "Bootstrap",
     class: "bg-white text-[#7114e7]",
-    icon: BoostrapIcon
+    icon: BoostrapIcon,
   },
   Python: {
     name: "Python",
     class: "bg-slate-900 text-white",
     icon: PythonIcon
   },
-}
+};
 const PROJECTS = [
   {
     title: "Romero's Tires and Rims",
@@ -57,50 +57,56 @@ const PROJECTS = [
     github: "https://github.com/ORomero227/Real-Estate-Entry-Genius",
     image: "/projects/realstate.webp",
     tags: [TAGS.Python],
-  }
-]
+  },
+];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Image of the ${title} project" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Image of the ${title} project"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-        {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GithubIcon class="size-6" />
-              Code
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GithubIcon class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
