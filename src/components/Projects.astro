@@ -30,7 +30,7 @@ const TAGS = {
   Python: {
     name: "Python",
     class: "bg-slate-900 text-white",
-    icon: PythonIcon
+    icon: PythonIcon,
   },
 };
 const PROJECTS = [
@@ -53,7 +53,7 @@ const PROJECTS = [
   {
     title: "Real Estate Entry Genius",
     description:
-      "This project utilizes web scraping and automation to extract real estate listing information and automatically populate a Google Form with the collected data.",
+      "This project utilizes web scraping and automation to extract real estate listing information and automatically fill a Google Form with the collected data.",
     github: "https://github.com/ORomero227/Real-Estate-Entry-Genius",
     image: "/projects/realstate.webp",
     tags: [TAGS.Python],
@@ -61,21 +61,21 @@ const PROJECTS = [
 ];
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="flex flex-col md:grid md:grid-cols-2 gap-y-16 md:gap-x-6">
   {
     PROJECTS.map(({ image, title, description, tags, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <article class="flex flex-col space-x-0 space-y-8 group">
+        <div class="w-full">
+          <div class="relative flex flex-col items-center gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl group-hover:-translate-y-1 group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <img
               alt="Image of the ${title} project"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 group-hover:scale-105"
               src={image}
             />
           </div>
         </div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
+        <div class="w-full md:max-w-lg">
           <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
             {title}
           </h3>
@@ -84,7 +84,7 @@ const PROJECTS = [
               {tags.map((tag) => (
                 <li>
                   <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-2 `}
                   >
                     <tag.icon class="size-4" />
                     {tag.name}
