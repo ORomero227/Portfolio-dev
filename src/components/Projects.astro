@@ -66,11 +66,12 @@ const PROJECTS = [
     PROJECTS.map(({ image, title, description, tags, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group">
         <div class="w-full">
-          <div class="relative flex flex-col items-center gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl group-hover:-translate-y-1 group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+          <div class="relative flex flex-col items-center gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl lg:border lg:border-gray-800 lg:hover:border-gray-700">
             <img
-              alt="Image of the ${title} project"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 group-hover:scale-105"
+              alt={title}
+              class="object-cover w-full h-auto transition-all duration-300"
               src={image}
+              loading="lazy"
             />
           </div>
         </div>
