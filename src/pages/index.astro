@@ -7,6 +7,8 @@ import Projects from '../components/Projects.astro';
 import Hero from '../components/Hero.astro';
 import TitleSection from '../components/TitleSection.astro';
 import ProfileCheck from '../components/icons/ProfileCheck.astro';
+import Education from '../components/Education.astro';
+import EducationIcon from '../components/icons/EducationIcon.astro';
 ---
 
 <Layout 
@@ -14,26 +16,34 @@ import ProfileCheck from '../components/icons/ProfileCheck.astro';
 	description="Software Developer from Puerto Rico, focused on building efficient and functional solutions, always prioritizing user experience and security."
 >
 	<main class="px-4">
-		<SectionContainer class="py-16 md:py-36">
+		<SectionContainer class="py-16 md:pt-36 pb-28">
 			<Hero />
 			<slot />
 		</SectionContainer>
 
 		<div class="space-y-24">
-		<SectionContainer id="experience">
-			<TitleSection>
-				<ProfileCheck class="size-8"/>
-				Experience and Education
-			</TitleSection>
-			<Experience />
-		</SectionContainer>
-
 		<SectionContainer id="projects">
 			<TitleSection>
 				<CodeIcon class="size-7"/>
 				Projects
 			</TitleSection>
 			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="experience">
+			<TitleSection>
+				<ProfileCheck class="size-8"/>
+				Experience
+			</TitleSection>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="education">
+			<TitleSection>
+				<EducationIcon class="size-8"/>
+				Education
+			</TitleSection>
+			<Education />
 		</SectionContainer>
 	</div>
 	</main>
