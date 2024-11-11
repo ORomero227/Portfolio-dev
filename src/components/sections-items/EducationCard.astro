@@ -1,0 +1,45 @@
+---
+import CalendarIcon from '../icons/CalendarIcon.astro';
+import EducationIcon from '../icons/EducationIcon.astro';
+
+// EducationCard.astro
+// import { AcademicCapIcon, ClockIcon, BookOpenIcon } from '@heroicons/react/24/outline'
+
+interface Props {
+  type: string;
+  title: string;
+  institution: string;
+  startDate?: string;
+  endDate?: string;
+  description?: string;
+  achievements?: string[];
+}
+
+const { type, title, institution, startDate, endDate, description, achievements = [] } = Astro.props;
+
+const Icon = type === 'degree' ? EducationIcon : EducationIcon;
+---
+
+<div class="w-full bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden dark:border-none dark:bg-transparent">
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{title}</h3>
+    <p class="text-sm text-gray-600 dark:text-gray-300 mb-4">{institution}</p>
+    <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
+      <CalendarIcon class="h-5 w-5" />
+      <span>
+        {startDate ? `Completed: ${startDate} - ${endDate}` : `Completed: ${endDate}`}
+      </span>
+    </div>
+    <p class="text-sm text-gray-700 dark:text-gray-300 mb-4">{description}</p>
+    {achievements.length > 0 && (
+      <div class="space-y-2">
+        <h4 class="font-semibold text-sm text-gray-900 dark:text-white">Key Achievements:</h4>
+        <ul class="list-disc list-inside text-sm space-y-1 text-gray-700 dark:text-gray-300">
+          {achievements.map((achievement) => (
+            <li>{achievement}</li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</div>

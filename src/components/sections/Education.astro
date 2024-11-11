@@ -1,0 +1,34 @@
+---
+import EducationCard from "../sections-items/EducationCard.astro";
+
+const EDUCATION = [
+  {
+    type: 'degree',
+    title: "Bachelor of Science in Computer Science",
+    institution: "Inter American University of Puerto Rico",
+    startDate: "Aug 2020",
+    endDate: "May 2024",
+    achivements: [],
+  },
+  {
+    type: 'certification',
+    title: "Google Cybersecurity Professional Certificate",
+    institution: "Coursera - Google",
+    endDate: "Aug 2024",
+    description: "Experienced in Linux, SIEM tools, and IDS, with a strong ability to identify and mitigate cybersecurity risks, threats, and vulnerabilities.",
+    achivements: [],
+  },
+];
+---
+<div class="flex flex-col md:grid md:grid-cols-2 md:gap-x-6 mt-5">
+      {EDUCATION.map((item) => (
+        <EducationCard 
+            type={item.type}
+            title={item.title} 
+            institution={item.institution} 
+            startDate={item.startDate} 
+            endDate={item.endDate}
+            description={item.description}
+            achievements={item.achivements} />
+      ))}
+</div>
