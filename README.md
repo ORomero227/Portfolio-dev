@@ -1,1 +1,1 @@
-![PortfolioScreenshot](https://github.com/user-attachments/assets/7935e3d4-5b52-4acc-9414-21341d742116)
+![PortfolioScreenshot](https://github.com/user-attachments/assets/ae5d32f9-19cb-4773-84e1-23a196a3fc39)
