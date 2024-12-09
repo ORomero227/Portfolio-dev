@@ -5,6 +5,8 @@ import GithubIcon from "../icons/GithubIcon.astro";
 import CodeIcon from "../icons/CodeIcon.astro";
 import PythonIcon from "../icons/Python.astro";
 import BoostrapIcon from "../icons/BootstrapIcon.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import React from "../icons/React.astro";
 
 const TAGS = {
   MSSQL: {
@@ -32,6 +34,16 @@ const TAGS = {
     class: "bg-slate-900 text-white",
     icon: PythonIcon,
   },
+  Tailwind: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  React: {
+    name: "React",
+    class: "bg-slate-900 text-white",
+    icon: React,
+  },
 };
 const PROJECTS = [
   {
@@ -51,12 +63,12 @@ const PROJECTS = [
     tags: [TAGS.Python, TAGS.Bootstrap],
   },
   {
-    title: "Chill's Restaurant",
+    title: "Chef Claude",
     description:
-      "Dynamic restaurant website developed with ASP.NET and SQL Server.",
-    github: "https://github.com/ORomero227/ChillsRestaurant",
-    image: "/projects/chills.webp",
-    tags: [TAGS.MSSQL, TAGS.ASP, TAGS.Bootstrap],
+      "ChefClaude is a React app with Tailwind CSS that uses Claude AI to generate recipes from user-provided ingredients.",
+    github: "https://github.com/ORomero227/ChefClaude",
+    image: "/projects/ChefClaude.webp",
+    tags: [TAGS.React, TAGS.Tailwind],
   },
   {
     title: "Real Estate Entry Genius",
